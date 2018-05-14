@@ -4,8 +4,6 @@
 
  will probably run on any *nix system
 
- version 0.0.5 (alpha)
-
  (c) 2003 Leander Seige - leander@seige.name
 
  Released under the terms of the GNU General Public License (GPL)

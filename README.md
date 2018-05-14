@@ -1,4 +1,4 @@
-# libperceptronThese
+# libperceptron
 
 These files implement a super simple perceptron library. This library was intended (and did) run on Atmel AVR
  microcontroller chips.
