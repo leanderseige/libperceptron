@@ -3,8 +3,6 @@
 These files implement a super simple perceptron library. This library was intended (and did) run on Atmel AVR
  microcontroller chips.
 
-Version 0.0.4 (alpha)
-
 (c) 2003 by Leander Seige, leander@seige.name
 
 
