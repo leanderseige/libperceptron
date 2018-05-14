@@ -10,7 +10,7 @@ Version 0.0.4 (alpha)
 
 ## Demo 1 (universal.c)
 
-An artificial neural net learns the ASCII art image on the right, current state of mind of the net is shown on the right.
+An artificial neural net learns the ASCII art image on the left, current state of mind of the net is shown on the right.
 
 ![Alt Text](demo.gif)
 
