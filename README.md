@@ -15,7 +15,7 @@ An artificial neural net learns the ASCII art image on the left, current state o
 
 ## Demo 2 (example.c w/ Makefile)
 
-This net learns the curve of a sine wave and displays its understanding on a LED bar.
+This net learns the curve of a sine wave and displays its understanding on an LED bar.
 
 sorry, no picture available
 
