@@ -12,6 +12,8 @@ An artificial neural net learns the ASCII art image on the left, current state o
 
 ![Alt Text](demo.gif)
 
+https://www.youtube.com/watch?v=-YO8psSf_sg
+
 
 ## Demo 2 (example.c w/ Makefile)
 
