@@ -22,7 +22,7 @@ long double i[1]={0.0}; /* array of input values */
 long double o[1]={0.0}; /* array of output values */
 long double w[1]={0.0}; /* array of wanted values */
 long double sx,sy,nx,ny;
-long long int nn[]={1,4,12,16,1}; /* definition of the net to be build */
+long long int nn[]={1,14,14,1}; /* definition of the net to be build */
 long long int nnn = 5;
 struct n_net *mynet;
 
