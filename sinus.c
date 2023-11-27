@@ -23,7 +23,7 @@ long double o[1]={0.0}; /* array of output values */
 long double w[1]={0.0}; /* array of wanted values */
 long double sx,sy,nx,ny;
 long long int nn[]={1,14,14,1}; /* definition of the net to be build */
-long long int nnn = 5;
+long long int nnn = 4;
 struct n_net *mynet;
 
 static SDL_AudioDeviceID audio_device = 0;
@@ -166,6 +166,7 @@ int main(int argc, char **argv)
                 case SDL_KEYDOWN:
                     switch( e.key.keysym.sym ){
                         case SDLK_SPACE:
+                            cyclecount=0;
                             mynet = n_build_net (nnn,nn,0.2,0.4,NULL);
                             // SDL_PauseAudioDevice(audio_device, paused);
                             break;
@@ -259,12 +260,13 @@ int main(int argc, char **argv)
             }
             SDL_SetRenderDrawColor(renderer, 255, 255-e, 255-e, 255);
             SDL_RenderFillRect(renderer,&neuron);
-            fprintf(stderr,"\n");
+            // fprintf(stderr,"\n");
             }
-            fprintf(stderr,"\n");
+            // fprintf(stderr,"\n");
         }
 
         SDL_RenderPresent(renderer);
+        printf("cyclecount: %d\n",(int)cyclecount);
     }
 
     SDL_CloseAudioDevice(audio_device);
