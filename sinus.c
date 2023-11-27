@@ -6,7 +6,7 @@
 
     Released under the terms of the GNU General Public License (GPL)
 
-    compile with: gcc  sinus.c -o sinus -lSDL2 -lperceptron -L.
+    compile with: gcc  sinus.c -o sinus -lSDL2 -lperceptron -L. # -lm on Linux
     make sure necessary libraries are installed incl. their respective devel packages
     tested under Mac OSX and Linux
 
@@ -22,8 +22,8 @@ long double i[1]={0.0}; /* array of input values */
 long double o[1]={0.0}; /* array of output values */
 long double w[1]={0.0}; /* array of wanted values */
 long double sx,sy,nx,ny;
-long long int nn[]={1,12,12,1}; /* definition of the net to be build */
-long long int nnn = 4;
+long long int nn[]={1,4,12,16,1}; /* definition of the net to be build */
+long long int nnn = 5;
 struct n_net *mynet;
 
 static SDL_AudioDeviceID audio_device = 0;
@@ -76,6 +76,11 @@ void lerncycle() {
     }
 
     // nx = (1+sin(nx*M_PI));
+
+    #ifndef M_PI
+    #    define M_PI 3.14159265358979323846
+    #endif
+
 
     sx=nx*M_PI*12;                      		/* 0..2PI */
     sy=sin(sx);      				/* sin(0..2PI) */
@@ -229,7 +234,7 @@ int main(int argc, char **argv)
         long long int nx,ny,nz;
         long long int maxn=8; // better calc youself!! FIXME
         long long int rdy=40;
-        long long int rdx=160;
+        long long int rdx=240;
         long long int nss=20;
         neuron.w=neuron.h=nss;
 
@@ -237,7 +242,7 @@ int main(int argc, char **argv)
         for(nx=0;nx<(mynet->c_layers);nx++) {
             for(ny=0;ny<(mynet->layers[nx]->c_neurons);ny++) {
             // fprintf(stderr,"Layer:%3lld Neuron:%3lld TS:%+.4Lf dTS:%+.4Lf OUT:%+.4Lf\n",nx,ny,mynet->layers[nx]->neurons[ny]->ts,mynet->layers[nx]->neurons[ny]->ts,mynet->layers[nx]->neurons[ny]->out);
-            neuron.x = nx*rdx + SWIDTH/2-(mynet->c_layers*rdx)/2;
+            neuron.x = nx*rdx + SWIDTH/2 - ((mynet->c_layers-1)*rdx)/2;
             neuron.y = YNEURONS -  ((mynet->layers[nx]->c_neurons)*rdy)/2 + ny*rdy;
             int e = 255*mynet->layers[nx]->neurons[ny]->error;
             if(nx>0) {
@@ -248,7 +253,7 @@ int main(int argc, char **argv)
                     SDL_RenderDrawLine(renderer,
                         neuron.x+nss/2,
                         neuron.y+nss/2,
-                        (nx-1)*rdx+nss/2 + SWIDTH/2-(mynet->c_layers*rdx)/2,
+                        (nx-1)*rdx+nss/2 + SWIDTH/2-((mynet->c_layers-1)*rdx)/2,
                         YNEURONS -  ((mynet->layers[nx-1]->c_neurons)*rdy)/2 + nz*rdy + nss/2);
                 }
             }
