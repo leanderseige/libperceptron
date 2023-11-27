@@ -1,6 +1,8 @@
 universal
 test
 example
+sinus
+outsound.raw
 
 # Prerequisites
 *.d
