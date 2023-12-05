@@ -3,8 +3,13 @@
 These files implement a super simple perceptron library. This library was intended (and did) run on Atmel AVR
  microcontroller chips.
 
-(c) 2003 by Leander Seige, leander@seige.name
+License: GNU GPL V2, (c) 2003 by Leander Seige, leander@seige.name
 
+## New in 2023: Sinus Demo 
+
+![Alt Text](sinus.png)
+
+https://www.youtube.com/watch?v=0T46pTfCSsE
 
 ## Demo 1 (universal.c)
 
